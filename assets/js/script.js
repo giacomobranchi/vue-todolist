@@ -29,7 +29,10 @@ createApp({
             console.log(this.toDo);
         },
         insertToDo() {
-            this.toDo.push({ text: this.newToDo, done: false })
+            this.toDo.push({ text: this.newToDo, done: false });
+        },
+        inverter(index) {
+            this.toDo[index].done = !this.toDo[index].done;
         }
     }
 }).mount('#app')

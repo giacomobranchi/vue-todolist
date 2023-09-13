@@ -25,8 +25,8 @@
         <ul>
 
             <li v-for="(item, index) in toDo">
-                <p :class="[item.done ? lineThrough:'']">{{item.text}} <i @click="explode(index)"
-                        class="fa fa-bomb px-2" aria-hidden="true"></i>
+                <p @click="inverter(index)" :class="[item.done ? lineThrough:'']">{{item.text}} <i
+                        @click="explode(index)" class="fa fa-bomb px-2" aria-hidden="true"></i>
                 </p>
 
             </li>
