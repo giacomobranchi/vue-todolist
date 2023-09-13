@@ -19,18 +19,30 @@
 
 <body>
 
-    <div id="app">
-        <input @keydown.enter="insertToDo" v-model="newToDo" type="text">
-        <button @click="insertToDo">Add</button>
-        <ul>
+    <div id="app" class="container my-4">
+        <div class="card">
+            <div class="card-header">
 
-            <li v-for="(item, index) in toDo">
-                <p @click="inverter(index)" :class="[item.done ? lineThrough:'']">{{item.text}} <i
-                        @click="explode(index)" class="fa fa-bomb px-2" aria-hidden="true"></i>
-                </p>
+                <input class="m-2" @keydown.enter="insertToDo" v-model="newToDo" type="text">
+                <button @click="insertToDo">Add</button>
+            </div>
+            <div class="card-body">
+                <div class="card-text">
+                    <ul>
 
-            </li>
-        </ul>
+                        <li v-for="(item, index) in toDo">
+                            <p @click="inverter(index)" :class="[item.done ? lineThrough:'']">{{item.text}} <i
+                                    @click="explode(index)" class="fa fa-bomb px-2" aria-hidden="true"></i>
+                            </p>
+
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
